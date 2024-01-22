@@ -1,18 +1,12 @@
 <script setup>
 import TheWelcome from '../components/TheWelcome.vue'
-import { ref, onMounted } from 'vue'
-
-onMounted(() => {
-  alert("Hello from HomeView")
-})
-
-setTimeout(() => {
-  message.value = 'This is new message'
-}, 2000)
+import { ref } from 'vue'
 
 let message = ref("Hello world")
 
-
+let doSomething = () => {
+  alert("doing now!!!")
+}
 
 // export default {
 //   components: { TheWelcome },
@@ -33,5 +27,8 @@ let message = ref("Hello world")
   <main>
     <TheWelcome />
     <p>{{ message }}</p>
+    <p>
+      <button @click="doSomething">Click me</button>  
+    </p>
   </main>
 </template>
