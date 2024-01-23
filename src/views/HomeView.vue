@@ -1,14 +1,18 @@
 <script setup>
-import {useFlash} from '@/composables/useFlash';
+import { ref } from 'vue';
 
-let { flash } = useFlash();
+let food = ref('');
+
+function write() {
+  localStorage.setItem('food', food.value)
+}
 </script>
 
 <template>
   <main>
     <TheWelcome />
     <p>
-      <button @click="flash('It works!!!')">Flash</button>
+      What's your favorite food? <input type="text" v-model="food" @input="write">
     </p>
   </main>
 </template>
