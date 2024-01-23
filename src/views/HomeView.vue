@@ -1,8 +1,10 @@
 <script>
+import swal from 'sweetalert';
+
 export default {
     methods: {
       flash(message) {
-        alert(message)
+        swal('Success!', message, 'success')
       }
     },
 }
