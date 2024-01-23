@@ -1,10 +1,11 @@
 <script setup>
 import { ref } from 'vue';
 
-let food = ref('');
+let food = ref(localStorage.getItem('food'));
+let age = ref(localStorage.getItem('age'));
 
-function write() {
-  localStorage.setItem('food', food.value)
+function write(key, value) {
+  localStorage.setItem(key, value)
 }
 </script>
 
@@ -12,7 +13,10 @@ function write() {
   <main>
     <TheWelcome />
     <p>
-      What's your favorite food? <input type="text" v-model="food" @input="write">
+      What's your favorite food? <input type="text" v-model="food" @input="write('food', food)">
+    </p>
+    <p>
+      What's your favorite food? <input type="text" v-model="age" @input="write('age', age)">
     </p>
   </main>
 </template>
