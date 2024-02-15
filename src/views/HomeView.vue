@@ -1,25 +1,28 @@
 <script setup>
-import { useStorage } from '@/composables/useStorage'
 
-let food = useStorage('food', 'tacos')
-let age = useStorage('age', 44)
+  textarea.addEventListener("keydown", (e) => {
+    // tab was pressed
+    if (e.keyCode === 9) {
+      // get caret position/selection
+      let val = textarea.value,
+        start = textarea.selectionStart,
+        end = textarea.selectionEnd;
 
-let obj = useStorage('obj', { one: 'one' })
+      // set textarea value to: text before caret + tab + text after caret
+      textarea.value = val.substring(0, start) + "\t" + val.substring(end)
 
-setTimeout(() => {
-  obj.value.one = 'CHANGED'
-}, 3000)
+      // put caret at right position again
+      textarea.selectionStart = textarea.selectionEnd = start + 1
 
+      e.preventDefault();
+    }
+  })
 </script>
 
 <template>
   <main>
-    <TheWelcome />
-    <p>
-      What's your favorite food? <input type="text" v-model="food">
-    </p>
-    <p>
-      What's your age? <input type="text" v-model="age">
-    </p>
+    <form>
+      <textarea style="width: 100%; height: 300px;">Hi there</textarea>
+    </form>
   </main>
 </template>
