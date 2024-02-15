@@ -4,6 +4,12 @@ import { useStorage } from '@/composables/useStorage'
 let food = useStorage('food', 'tacos')
 let age = useStorage('age', 44)
 
+let obj = useStorage('obj', { one: 'one' })
+
+setTimeout(() => {
+  obj.value.one = 'CHANGED'
+}, 3000)
+
 </script>
 
 <template>
