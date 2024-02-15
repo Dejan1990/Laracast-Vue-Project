@@ -1,4 +1,7 @@
 <script setup>
+  import { ref } from 'vue'
+
+  let textarea = ref(null)
 
   textarea.addEventListener("keydown", (e) => {
     // tab was pressed
@@ -22,7 +25,7 @@
 <template>
   <main>
     <form>
-      <textarea style="width: 100%; height: 300px;">Hi there</textarea>
+      <textarea ref="textarea" style="width: 100%; height: 300px;">Hi there</textarea>
     </form>
   </main>
 </template>
