@@ -1,24 +1,27 @@
 <script setup>
-  import { ref } from 'vue'
+  import { onMounted, ref } from 'vue'
 
   let textarea = ref(null)
 
-  textarea.addEventListener("keydown", (e) => {
+  onMounted(() => {
+    textarea.value.addEventListener("keydown", (e) => {
+      let t = textarea.value
     // tab was pressed
     if (e.keyCode === 9) {
       // get caret position/selection
-      let val = textarea.value,
-        start = textarea.selectionStart,
-        end = textarea.selectionEnd;
+      let val = t.value,
+        start = t.selectionStart,
+        end = t.selectionEnd;
 
       // set textarea value to: text before caret + tab + text after caret
-      textarea.value = val.substring(0, start) + "\t" + val.substring(end)
+      t.value = val.substring(0, start) + "\t" + val.substring(end)
 
       // put caret at right position again
-      textarea.selectionStart = textarea.selectionEnd = start + 1
+      t.selectionStart = t.selectionEnd = start + 1
 
       e.preventDefault();
     }
+  })
   })
 </script>
 
