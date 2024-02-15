@@ -2,7 +2,7 @@
 // import { ref, watch } from 'vue';
 import { useStorage } from '@/composables/useStorage'
 
-let food = useStorage('food')
+let food = useStorage('food', 'salad')
 
 // let food = ref(localStorage.getItem('food'));
 // let age = ref(localStorage.getItem('age'));
