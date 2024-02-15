@@ -1,11 +1,12 @@
 <script setup>
-  import { onMounted, ref } from 'vue'
+  import { ref } from 'vue'
 
   let textarea = ref(null)
 
-  onMounted(() => {
-    textarea.value.addEventListener("keydown", (e) => {
-      let t = textarea.value
+  
+  function onKeyDown(e) {
+    // we can get rid of the addEventListener, because we're already doing that at the point we call this function
+    let t = textarea.value
     // tab was pressed
     if (e.keyCode === 9) {
       // get caret position/selection
@@ -21,14 +22,14 @@
 
       e.preventDefault();
     }
-  })
-  })
+  }
+  
 </script>
 
 <template>
   <main>
     <form>
-      <textarea ref="textarea" style="width: 100%; height: 300px;">Hi there</textarea>
+      <textarea ref="textarea" @keydown="onKeyDown" style="width: 100%; height: 300px;">Hi there</textarea>
     </form>
   </main>
 </template>
