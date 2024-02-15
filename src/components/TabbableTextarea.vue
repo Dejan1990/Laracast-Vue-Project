@@ -1,4 +1,8 @@
 <script setup>
+    defineProps({
+        modelValue: String
+    })
+
     function onTabPress(e) {
         let t = e.target
         let val = t.value,
@@ -13,6 +17,9 @@
 </script>
 
 <template>
-    <textarea @keydown.tab.prevent="onTabPress"></textarea>
+    <textarea 
+        @keydown.tab.prevent="onTabPress"
+        v-text="modelValue"
+    ></textarea>
 </template>
 
