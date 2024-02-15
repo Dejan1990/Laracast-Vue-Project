@@ -1,23 +1,9 @@
 <script setup>
-// import { ref, watch } from 'vue';
 import { useStorage } from '@/composables/useStorage'
 
-let food = useStorage('food', 'salad')
+let food = useStorage('food', 'tacos')
+let age = useStorage('age', 44)
 
-// let food = ref(localStorage.getItem('food'));
-// let age = ref(localStorage.getItem('age'));
-
-// watch(food, (val) => {
-//   write('food', val)
-// })
-
-// function write(key, value) {
-//   localStorage.setItem(key, value)
-// }
-
-// setTimeout(() => {
-//   food.value = 'changed'
-// }, 2000)
 </script>
 
 <template>
@@ -25,6 +11,9 @@ let food = useStorage('food', 'salad')
     <TheWelcome />
     <p>
       What's your favorite food? <input type="text" v-model="food">
+    </p>
+    <p>
+      What's your age? <input type="text" v-model="age">
     </p>
   </main>
 </template>
