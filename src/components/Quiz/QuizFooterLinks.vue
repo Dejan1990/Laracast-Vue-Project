@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h5>{{ key }}</h5>
+        <h5>{{ name }}</h5>
 
         <ul>
             <li><a href="#">Get a Job</a></li>
@@ -14,5 +14,9 @@ import {inject} from 'vue'
 
 // defineProps({quiz: Object});
 
-let key = inject('key');
+let name = inject('name');
+
+setTimeout(() => {
+    name.value = 'New name'
+}, 2000);
 </script>

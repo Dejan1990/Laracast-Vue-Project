@@ -1,4 +1,5 @@
 <template>
+    <h1>{{ name }}</h1>
     <QuizHeader />
     <QuizQuestion />
     <QuizFooter />
@@ -12,7 +13,7 @@
 
     // defineProps({quiz: Object});
 
-    let name = ref('John Doe')
+    let name = ref('Jane Doe')
 
-    provide('key', name);
+    provide('name', name);
 </script>
