@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h5>{{ name }}</h5>
+        <button @click.prevent="changeName">{{ name }}</button>
 
         <ul>
             <li><a href="#">Get a Job</a></li>
@@ -14,9 +14,5 @@ import {inject} from 'vue'
 
 // defineProps({quiz: Object});
 
-let name = inject('name');
-
-setTimeout(() => {
-    name.value = 'New name'
-}, 2000);
+let {name, changeName} = inject('name');
 </script>

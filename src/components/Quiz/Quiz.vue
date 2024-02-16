@@ -15,5 +15,8 @@
 
     let name = ref('Jane Doe')
 
-    provide('name', name);
+    provide('name', {
+        name,  // because the key and the value are the same name: name
+        changeName: () => name.value = 'Changed'
+    });
 </script>
