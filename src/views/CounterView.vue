@@ -6,6 +6,8 @@
     <div>
         <h1>{{ counter.count }}</h1>
 
-        <button @click="counter.count++">Increment</button>
+        <p v-show="counter.message.length">{{ counter.message }}</p>
+
+        <button @click="counter.increment()">Increment</button>
     </div>
 </template>
