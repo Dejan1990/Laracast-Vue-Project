@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h5>{{ quiz.name }}</h5>
+        <h5>{{ key }}</h5>
 
         <ul>
             <li><a href="#">Get a Job</a></li>
@@ -10,5 +10,9 @@
 </template>
 
 <script setup>
-defineProps({quiz: Object});
+import {inject} from 'vue'
+
+// defineProps({quiz: Object});
+
+let key = inject('key');
 </script>
