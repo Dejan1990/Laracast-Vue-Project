@@ -1,4 +1,4 @@
 export let state = {
-    name: 'My first quiz', 
+    name: 'My second quiz', 
     questions: []
 }
