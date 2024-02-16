@@ -11,6 +11,11 @@
         <!-- <p v-show="counter.message.length">{{ counter.message }}</p> -->
         <p>{{ counter.message }}</p>
 
-        <button @click="counter.count++">Increment</button> 
+        <button 
+            @click="counter.increment()"
+            :disabled="! counter.remaining"
+        >
+            Increment ({{ counter.remaining }} remaining)
+        </button> 
     </div>
 </template>
