@@ -1,3 +1,7 @@
 <template>
-    <h2>This is Quiz Header</h2>
+    <h2>{{ state.name }}</h2>
 </template>
+
+<script setup>
+    import {state} from '@/stores/quizStore'
+</script>
